@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>net.gplatform</groupId>
 		<artifactId>gplatform-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1</version>
 		<relativePath />
 	</parent>
 
 	<artifactId>spring-social-base</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
