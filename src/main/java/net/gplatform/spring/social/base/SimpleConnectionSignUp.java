@@ -37,18 +37,11 @@ public class SimpleConnectionSignUp implements ConnectionSignUp {
 	@Override
 	public String execute(Connection<?> connection) {
 		UserProfile userProfile = connection.fetchUserProfile();
-		String localUserId = UUID.randomUUID().toString();
-		String userName = userProfile.getUsername();
-		if (StringUtils.isNotEmpty(userName)) {
-			localUserId = userName;
-		}
-		String name = userProfile.getName();
-		if (StringUtils.isNotEmpty(name)) {
-			localUserId = name;
-		}
-		String email = userProfile.getEmail();
-		if (StringUtils.isNotEmpty(email)) {
-			localUserId = email;
+		String localUserId = null;
+		if (StringUtils.isNotEmpty(userProfile.getUsername())) {
+			localUserId = userProfile.getUsername();
+		} else {
+			localUserId = UUID.randomUUID().toString();
 		}
 		logger.debug("Local User ID is: {}", localUserId);
 		return localUserId;
